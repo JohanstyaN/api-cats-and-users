@@ -1,4 +1,3 @@
-# main.py
 from fastapi import FastAPI
 from app.routers.cats import router as cats_router
 from app.routers.users import router as users_router

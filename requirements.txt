@@ -5,3 +5,5 @@ pymongo
 passlib[bcrypt]
 pydantic
 pydantic-settings
+pytest
+pytest-asyncio
