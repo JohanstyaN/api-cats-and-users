@@ -1,0 +1,111 @@
+{
+  "info": {
+    "name": "Cats & Users API",
+    "_postman_id": "collection-1234",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cats",
+      "item": [
+        {
+          "name": "List Breeds",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds",
+              "host": ["{{base_url}}"],
+              "path": ["breeds"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Breed by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/{{breed_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["breeds", "{{breed_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Breeds",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/breeds/search?q={{breed_search}}&attach_image={{attach_image}}",
+              "host": ["{{base_url}}"],
+              "path": ["breeds", "search"],
+              "query": [
+                { "key": "q", "value": "{{breed_search}}" },
+                { "key": "attach_image", "value": "{{attach_image}}" }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "List Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": ["{{base_url}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"{{user_name}}\",\n  \"last_name\": \"{{user_last_name}}\",\n  \"password\": \"{{user_password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": ["{{base_url}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/login?username={{user_username}}&password={{user_password_login}}",
+              "host": ["{{base_url}}"],
+              "path": ["users","login"],
+              "query": [
+                { "key": "username", "value": "{{user_username}}" },
+                { "key": "password", "value": "{{user_password_login}}" }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
