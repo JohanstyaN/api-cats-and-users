@@ -75,7 +75,7 @@ docker-compose logs -f api
 
 ~~~text
 Swagger UI → http://localhost:8001/docs  
-ReDoc       → http://localhost:8001/redoc
+ReDoc      → http://localhost:8001/redoc
 ~~~
 
 ---
